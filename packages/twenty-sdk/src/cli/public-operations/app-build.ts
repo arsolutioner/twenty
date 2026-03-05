@@ -41,8 +41,6 @@ const innerAppBuild = async (
   }
   const clientService = new ClientService();
 
-  await clientService.ensureGeneratedClientStub({ appPath });
-
   onProgress?.('Building application files...');
 
   const firstBuildResult = await buildApplication({
@@ -65,7 +63,7 @@ const innerAppBuild = async (
 
   onProgress?.('Generating API client...');
 
-  await clientService.generate({ appPath });
+  await clientService.generateCoreClient({ appPath });
 
   onProgress?.('Running typecheck...');
 
