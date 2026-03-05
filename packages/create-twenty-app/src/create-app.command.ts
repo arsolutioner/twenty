@@ -115,6 +115,7 @@ export class CreateAppCommand {
         includeExampleView: false,
         includeExampleNavigationMenuItem: false,
         includeExampleSkill: false,
+        includeExampleAgent: false,
         includeExampleIntegrationTest: false,
       };
     }
@@ -128,6 +129,7 @@ export class CreateAppCommand {
         includeExampleView: true,
         includeExampleNavigationMenuItem: true,
         includeExampleSkill: true,
+        includeExampleAgent: true,
         includeExampleIntegrationTest: true,
       };
     }
@@ -174,6 +176,11 @@ export class CreateAppCommand {
             checked: true,
           },
           {
+            name: 'Example agent (AI agent definition)',
+            value: 'agent',
+            checked: true,
+          },
+          {
             name: 'Integration test (vitest test verifying app installation)',
             value: 'integrationTest',
             checked: true,
@@ -206,6 +213,7 @@ export class CreateAppCommand {
       includeExampleNavigationMenuItem:
         selectedExamples.includes('navigationMenuItem'),
       includeExampleSkill: selectedExamples.includes('skill'),
+      includeExampleAgent: selectedExamples.includes('agent'),
       includeExampleIntegrationTest,
     };
   }
