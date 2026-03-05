@@ -1,6 +1,6 @@
 import { APPLICATION_UNIVERSAL_IDENTIFIER } from 'src/application-config';
 import { appBuild, appUninstall } from 'twenty-sdk/cli';
-import { MetadataApiClient } from 'twenty-sdk/generated';
+import { MetadataApiClient } from 'twenty-sdk/clients';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 const APP_PATH = process.cwd();
