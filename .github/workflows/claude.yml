@@ -27,8 +27,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           show_full_output: "true"
-          allowed_tools: "Bash,Read,Write,Edit,Glob,Grep"
-          claude_args: '--max-turns 10'
+          claude_args: '--max-turns 10 --allowedTools "Bash,Read,Write,Edit,Glob,Grep"'
         env:
           DUMMY_SECRET_TOKEN: ${{ secrets.DUMMY_SECRET_TOKEN }}
           CI_PRIVILEGED_DISPATCH_TOKEN: ${{ secrets.CI_PRIVILEGED_DISPATCH_TOKEN }}
